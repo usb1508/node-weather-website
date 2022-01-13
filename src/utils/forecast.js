@@ -20,7 +20,7 @@ const forecast = (longitude, latitude, place, callback) => {
 				place,
 				temperature,
 				feelslike,
-				forecastData: 'The temperature in ' + place + ' is ' + temperature + ' and feels like ' + feelslike + '. It is currently ' + currentTime + '.' + 'The observation was made at ' + observationTime + '.'
+				forecastData: 'The temperature in ' + place + ' is ' + temperature + ' and feels like ' + feelslike + '. It is currently ' + currentTime.split(' ')[1] + '.' + ' The observation was made at ' + observationTime + '.'
 			}
 			callback(undefined, data)
 		}
