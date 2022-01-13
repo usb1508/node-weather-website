@@ -14,12 +14,13 @@ const forecast = (longitude, latitude, place, callback) => {
 		else {
 			const temperature = response.body.current.temperature
 			const feelslike = response.body.current.feelslike
-			const time = response.body.current.observation_time
+			const observationTime = response.body.current.observation_time
+			const currentTime = response.body.location.localtime
 			const data = {
 				place,
 				temperature,
 				feelslike,
-				forecastData: 'The temperature in ' + place + ' is ' + temperature + ' and feels like ' + feelslike + '. It is currently ' + time + '.'
+				forecastData: 'The temperature in ' + place + ' is ' + temperature + ' and feels like ' + feelslike + '. It is currently ' + currentTime + '.' + 'The observation was made at ' + observationTime + '.'
 			}
 			callback(undefined, data)
 		}
